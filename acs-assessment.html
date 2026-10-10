@@ -5,37 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ACS Skills Assessment — pathways & criteria (internal)</title>
 <style>
-:root{--bg:#f4f5f7;--card:#fff;--ink:#1c2333;--mut:#5b6472;--line:#dfe3ea;--grn:#0f7a3d;--grnbg:#e6f6ec;--amb:#8a5a00;--ambbg:#fff4d6;--gry:#5b6472;--grybg:#eceff3;--red:#a31f1f;--redbg:#fdecec;--acc:#19176e}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14.5px/1.6 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
-.wrap{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
-header.top{background:var(--acc);color:#fff;border-radius:12px;padding:18px 20px;margin-bottom:14px}
-header.top h1{margin:0 0 4px;font-size:21px}header.top p{margin:0;opacity:.85;font-size:13px}
-header.top a{color:#fff}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px}
-h3.sec{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);margin:0 0 10px}
+:root{--paper:#fafaf7;--card:#ffffff;--ink:#1d2030;--mut:#606778;--line:#e7e2d6;--line2:#f1eee4;--grn:#0e7a3d;--grnbg:#e9f5ee;--amb:#8a5a00;--ambbg:#fdf3d7;--mut2:#9aa1ad;--mutbg:#f1f0ea;--red:#a83226;--redbg:#fbeeea;--acc:#23206e}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:14.5px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-variant-numeric:tabular-nums}
+::selection{background:var(--acc);color:#fff}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1060px;margin:0 auto;padding:28px 20px 72px}
+header.top{background:var(--acc);color:#fff;border-radius:14px;padding:26px 28px;margin-bottom:20px;box-shadow:0 12px 32px rgba(35,32,110,.18)}
+header.top h1{margin:0 0 6px;font-size:24px;letter-spacing:-.02em;font-weight:750}header.top p{margin:0;opacity:.82;font-size:13.5px;max-width:72ch}
+header.top a{color:#fff;text-underline-offset:3px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:16px;box-shadow:0 1px 2px rgba(30,28,60,.05)}
+h2.sec{font-size:15px;font-weight:700;color:var(--ink);letter-spacing:-.01em;margin:0 0 4px;padding-bottom:9px;border-bottom:2px solid var(--line)}
 table{width:100%;border-collapse:collapse;font-size:13px}
-th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
-thead th{background:#f0f2f6}
-details{margin:8px 0;border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:#fff}
-summary{cursor:pointer;font-weight:700;color:var(--acc);font-size:15px}
-.pill{border-radius:20px;padding:2px 10px;font-size:12.5px;font-weight:600;border:1px solid transparent;white-space:nowrap}
-.y{background:var(--grnbg);color:var(--grn);border-color:var(--grn)}
-.n{background:var(--grybg);color:var(--gry);border-color:#c6ccd4}
+th,td{border:0;border-bottom:1px solid var(--line2);padding:8px 10px;text-align:left;vertical-align:top}
+thead th,table tr:first-child th{font-size:12px;font-weight:650;color:var(--mut);border-bottom:2px solid var(--line)}
+details{margin:10px 0;border:1px solid var(--line);border-radius:10px;padding:11px 15px;background:#fff}
+summary{cursor:pointer;font-weight:650;color:var(--acc);font-size:15px;list-style:none;display:flex;align-items:center;gap:9px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"";width:8px;height:8px;border-right:2px solid var(--acc);border-bottom:2px solid var(--acc);transform:rotate(-45deg);transition:transform .18s ease-out;flex:none}
+details[open] summary::before{transform:rotate(45deg)}
+.pill{border-radius:999px;padding:3px 11px;font-size:12.5px;font-weight:650;border:1px solid transparent;white-space:nowrap}
+.y{background:var(--grnbg);color:var(--grn);border-color:#bcdcc6}
+.n{background:var(--mutbg);color:var(--mut);border-color:#d8d5c8}
 .flow{overflow-x:auto}
 .flow svg{min-width:640px;width:100%;height:auto}
-.foot{font-size:12px;color:var(--mut)}
-ul.tight{margin:6px 0;padding-left:20px}ul.tight li{margin:3px 0}
-@media (max-width:640px){.wrap{padding:12px 10px 40px}header.top{padding:14px}header.top h1{font-size:18px}.card{padding:12px}table{font-size:12px}th,td{padding:5px 6px}}
+.foot{font-size:12.5px;color:var(--mut);max-width:76ch}
+ul.tight{margin:8px 0;padding-left:22px;max-width:74ch}ul.tight li{margin:4px 0}
+@media (max-width:640px){.wrap{padding:14px 10px 44px}header.top{padding:18px}header.top h1{font-size:20px}.card{padding:14px}table{font-size:12px}th,td{padding:6px 7px}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header class="top"><h1>ACS Skills Assessment — pathways &amp; criteria</h1><p>Internal reference &bull; sourced from acs.org.au Oct 2026 &bull; <a href="acs-view.html">ACS occupations view</a> &bull; <a href="index.html">all authorities</a> &bull; verify before advising</p></header>
 
-<div class="card"><h3 class="sec">Decision flow — which pathway?</h3>
+<div class="card"><h2 class="sec">Decision flow — which pathway?</h3>
 <div class="flow">
 <svg viewBox="0 0 680 560" role="img" aria-label="ACS pathway decision flowchart">
-<style>.b{fill:#fff;stroke:#19176e;stroke-width:2}.d{fill:#eef0ff;stroke:#19176e;stroke-width:2}.t{font:13px sans-serif;fill:#1c2333}.s{font:11.5px sans-serif;fill:#5b6472}.a{stroke:#19176e;stroke-width:2;fill:none;marker-end:url(#ah)}.p{fill:#0f7a3d;font:12px sans-serif;font-weight:bold}.n{fill:#a31f1f;font:12px sans-serif;font-weight:bold}</style>
+<style>.b{fill:#fff;stroke:#19176e;stroke-width:2}.d{fill:#eef0ff;stroke:#19176e;stroke-width:2}.t{font:13px sans-serif;fill:#1c2333}.s{font:12px sans-serif;fill:#5b6472}.a{stroke:#19176e;stroke-width:2;fill:none;marker-end:url(#ah)}.p{fill:#0f7a3d;font:12px sans-serif;font-weight:bold}.n{fill:#a31f1f;font:12px sans-serif;font-weight:bold}</style>
 <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#19176e" stroke-width="2"/></marker></defs>
 <rect class="b" x="230" y="8" width="220" height="44" rx="8"/><text class="t" x="340" y="27" text-anchor="middle">Occupation on</text><text class="t" x="340" y="44" text-anchor="middle">ACS list?</text>
 <text class="n" x="228" y="62">no →</text><text class="s" x="60" y="62">wrong authority;</text><text class="s" x="60" y="76">check Home Affairs list</text>
@@ -62,7 +68,7 @@ ul.tight{margin:6px 0;padding-left:20px}ul.tight li{margin:3px 0}
 </svg>
 </div></div>
 
-<div class="card"><h3 class="sec">General Skills — experience deduction (the core table)</h3>
+<div class="card"><h2 class="sec">General Skills — experience deduction (the core table)</h3>
 <table><tr><th>Qualification (AQF-comparable)</th><th>ICT content</th><th>Related to occupation?</th><th>Experience required ★</th></tr>
 <tr><td>Bachelor+ </td><td>Major</td><td>Closely</td><td><b>2yrs in last 10</b> OR 4yrs anytime (earliest skill date wins)</td></tr>
 <tr><td>Bachelor+</td><td>Major</td><td>Not closely</td><td>4yrs anytime</td></tr>
@@ -85,7 +91,7 @@ ul.tight{margin:6px 0;padding-left:20px}ul.tight li{margin:3px 0}
 <details><summary>Assessment mechanics &amp; rules</summary>
 <ul class="tight"><li><b>Order:</b> ID → AQF comparability → ICT Major/Minor/Insufficient → closely-related test → experience deduction → outcome letter per ANZSCO (up to 3 codes, one price).</li><li><b>Counting:</b> ≥20h/wk = full-time; &lt;20h unsuitable; study-required experience excluded; overlapping episodes counted once (both listed suitable).</li><li><b>Evidence:</b> employer refs on letterhead (or colleague stat dec + service/leaving certificate); payment evidence must match skill level; nothing can be added after submission.</li><li><b>Vendor certs:</b> mandatory for RPL; optional for DevOps/Cyber codes; banned for 485 stream.</li><li><b>Appeals:</b> Level 1 (internal, senior assessor, extra evidence allowed) within <b>60 days</b> via portal; Level 2 (external) within <b>30 days</b> via email, no new evidence; 2–4 wks each; fee refund only if wrongly assessed.</li><li><b>Service:</b> 4–6 weeks standard (15 days advertised on new portal); free priority if visa deadline &lt;12 weeks (2 wks notice); Christmas shutdown 21 Dec 2026–4 Jan 2027; no English test; 18+ only; completed qualifications only; no pre-assessment advice; complimentary 12-month ACS membership.</li></ul></details>
 
-<div class="card"><h3 class="sec">Occupation coverage — ACS lists vs this viewer</h3>
+<div class="card"><h2 class="sec">Occupation coverage — ACS lists vs this viewer</h3>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
 <div><b>In this viewer (25, v1.3)</b><table><tr><th>Code</th><th>Status</th></tr>
 <tr><td><b>135111</b></td><td><span class="pill y">in viewer</span></td></tr>

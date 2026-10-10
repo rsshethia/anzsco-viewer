@@ -5,32 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CWA-assessed occupations — consolidated view (internal)</title>
 <style>
-:root{--bg:#f4f5f7;--card:#fff;--ink:#1c2333;--mut:#5b6472;--line:#dfe3ea;--grn:#0f7a3d;--grnbg:#e6f6ec;--amb:#8a5a00;--ambbg:#fff4d6;--gry:#5b6472;--grybg:#eceff3;--red:#a31f1f;--redbg:#fdecec;--acc:#19176e}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:13.5px/1.5 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
-.wrap{max-width:1400px;margin:0 auto;padding:20px 16px 60px}
-header.top{background:var(--acc);color:#fff;border-radius:12px;padding:18px 20px;margin-bottom:14px}
-header.top h1{margin:0 0 4px;font-size:21px}header.top p{margin:0;opacity:.85;font-size:13px}
-header.top a{color:#fff}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px}
-table{width:100%;border-collapse:collapse;font-size:12.5px}
-th,td{border:1px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
-thead th{background:#f0f2f6;position:sticky;top:0;font-size:12px}
-tr.detail td{background:#fafbfd;font-size:12.5px;color:#333}
-.code{font-weight:700;white-space:nowrap}.title{font-weight:600}
-.b{font-weight:700;white-space:nowrap}.y{color:var(--grn)}.n{color:#aab}.s{color:var(--amb)}.c{color:var(--red)}
-.oslS{color:var(--red);font-weight:700}.oslN{color:var(--grn)}
-.styes{color:var(--grn)}.stno{color:#c3c9d1}.stcl{color:var(--red);font-size:11.5px}
-a.rowlink{color:var(--acc);font-size:11.5px;cursor:pointer;white-space:nowrap}
-.foot{font-size:12px;color:var(--mut)}
-.sum{display:flex;gap:18px;flex-wrap:wrap;font-size:13px}
-.sum b{font-size:16px}
+:root{--paper:#fafaf7;--card:#ffffff;--ink:#1d2030;--mut:#606778;--line:#e7e2d6;--line2:#f1eee4;--grn:#0e7a3d;--grnbg:#e9f5ee;--amb:#8a5a00;--ambbg:#fdf3d7;--mut2:#9aa1ad;--mutbg:#f1f0ea;--red:#a83226;--redbg:#fbeeea;--acc:#23206e}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-variant-numeric:tabular-nums}
+::selection{background:var(--acc);color:#fff}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1380px;margin:0 auto;padding:28px 20px 72px}
+header.top{background:var(--acc);color:#fff;border-radius:14px;padding:26px 28px;margin-bottom:20px;box-shadow:0 12px 32px rgba(35,32,110,.18)}
+header.top h1{margin:0 0 6px;font-size:24px;letter-spacing:-.02em;font-weight:750}
+header.top p{margin:0;opacity:.82;font-size:13.5px;max-width:72ch}
+header.top a{color:#fff;text-underline-offset:3px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:16px;box-shadow:0 1px 2px rgba(30,28,60,.05)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{border:0;border-bottom:1px solid var(--line2);padding:9px 10px;text-align:left;vertical-align:top}
+thead th{background:var(--card);position:sticky;top:0;font-size:12px;font-weight:650;color:var(--mut);white-space:nowrap;border-bottom:2px solid var(--line);z-index:1}
+tbody tr:hover td{background:#f7f6f1}
+tr.detail td{background:#f7f6f1;font-size:13px;color:#3a3f4d}
+.code{font-weight:750;white-space:nowrap;letter-spacing:-.01em}.title{font-weight:600}
+.b{font-weight:700;white-space:nowrap}.y{color:var(--grn)}.n{color:var(--mut2)}.s{color:var(--amb)}.c{color:var(--red)}
+.oslS{color:var(--red);font-weight:750}.oslN{color:var(--grn)}
+.styes{color:var(--grn);font-weight:650}.stno{color:#c9cfd8}.stcl{color:var(--red);font-size:12px;text-decoration:line-through;text-decoration-thickness:1px}
+a.rowlink{color:var(--acc);font-size:12px;cursor:pointer;white-space:nowrap;text-decoration:none;border-bottom:1px dotted var(--acc);display:inline-flex;align-items:center;gap:6px}
+a.rowlink::after{content:"";width:7px;height:7px;border-right:2px solid var(--acc);border-bottom:2px solid var(--acc);transform:rotate(-45deg);transition:transform .18s ease-out}
+a.rowlink.open::after{transform:rotate(45deg)}
+.foot{font-size:12.5px;color:var(--mut);max-width:76ch}
+.sum{display:flex;gap:26px;flex-wrap:wrap;font-size:13.5px;color:var(--mut)}
+.sum b{font-size:15px;color:var(--ink)}
 @media (max-width:640px){
-.wrap{padding:12px 10px 40px}
-header.top{padding:14px}header.top h1{font-size:18px}header.top p{font-size:12px}
+.wrap{padding:14px 10px 44px}
+header.top{padding:18px}header.top h1{font-size:20px}header.top p{font-size:12.5px}
 .card{padding:12px}
 table{font-size:12px}#t{min-width:840px}
-th,td{padding:5px 6px}
-.sum{gap:12px}
+th,td{padding:6px 7px}
+.sum{gap:14px}
 }
 </style>
 </head>
@@ -49,17 +56,17 @@ const DATA=[{"code": "134214", "title": "Welfare Centre Manager", "description":
 const ST=[['ACT','st_act'],['NSW','st_nsw'],['NT','st_nt'],['QLD','st_qld'],['SA','st_sa'],['TAS','st_tas'],['VIC','st_vic'],['WA','st_wa']];
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function vb(v){if(v==='YES')return '<span class="b y">YES</span>';if(v==='state-dependent')return '<span class="b s">dep</span>';if(v==='closed')return '<span class="b c">clsd</span>';if(v==='limited')return '<span class="b s">ltd</span>';return '<span class="b n">—</span>';}
-function statesFor(o,sfx){const out=[];ST.forEach(function(s){const v=o[s[1]+sfx];if(v==='YES')out.push('<span class="styes">'+s[0]+'</span>');else if(v==='closed')out.push('<span class="stcl">'+s[0]+'✕</span>');});return out.join(' ')||'<span class="stno">—</span>';}
+function statesFor(o,sfx){const out=[];ST.forEach(function(s){const v=o[s[1]+sfx];if(v==='YES')out.push('<span class="styes">'+s[0]+'</span>');else if(v==='closed')out.push('<span class="stcl" title="program closed">'+s[0]+'</span>');});return out.join(' ')||'<span class="stno">—</span>';}
 let h='';
 DATA.forEach(function(o,i){
-  h+='<tr><td><span class="code">'+esc(o.code)+'</span><br><span class="title">'+esc(o.title)+'</span></td><td>'+esc(o.skill_level)+'</td><td>'+vb(o.visa_189)+'</td><td>'+vb(o.visa_190)+'</td><td>'+vb(o.visa_491)+'</td><td>'+vb(o.visa_482_sid)+'</td><td>'+vb(o.visa_186)+'</td><td>'+vb(o.visa_494)+'</td><td>'+esc(o.invite_tier||'—')+'</td><td class="'+(o.osl_national==='S'||o.osl_national==='R'||o.osl_national==='M'?'oslS':'oslN')+'">'+esc(o.osl_national)+'</td><td>'+statesFor(o,'_190')+'</td><td>'+statesFor(o,'_491')+'</td><td><a class="rowlink" data-i="'+i+'">details ▸</a></td></tr>';
+  h+='<tr><td><span class="code">'+esc(o.code)+'</span><br><span class="title">'+esc(o.title)+'</span></td><td>'+esc(o.skill_level)+'</td><td>'+vb(o.visa_189)+'</td><td>'+vb(o.visa_190)+'</td><td>'+vb(o.visa_491)+'</td><td>'+vb(o.visa_482_sid)+'</td><td>'+vb(o.visa_186)+'</td><td>'+vb(o.visa_494)+'</td><td>'+esc(o.invite_tier||'—')+'</td><td class="'+(o.osl_national==='S'||o.osl_national==='R'||o.osl_national==='M'?'oslS':'oslN')+'">'+esc(o.osl_national)+'</td><td>'+statesFor(o,'_190')+'</td><td>'+statesFor(o,'_491')+'</td><td><a class="rowlink" data-i="'+i+'">details</a></td></tr>';
   h+='<tr class="detail" id="d'+i+'" hidden><td colspan="13"><b>'+esc(o.code)+' '+esc(o.title)+'</b> — '+esc(o.description)+'<br><b>Lists:</b> CSOL '+esc(o.in_csol)+' · MLTSSL '+esc(o.in_mltssl)+' · STSOL '+esc(o.in_stsol)+' · ROL '+esc(o.in_rol)+' · '+esc(o.unit_group);
   ST.forEach(function(s){const c=o[s[1]+'_criteria'];if(c)h+='<br><b>'+s[0]+':</b> 190='+esc(o[s[1]+'_190'])+' 491='+esc(o[s[1]+'_491'])+' — '+esc(c);});
   h+='</td></tr>';
 });
 document.getElementById('rows').innerHTML=h;
 document.getElementById('sum').innerHTML='<span><b>'+DATA.length+'</b> occupations</span><span><b>'+DATA.filter(o=>o.visa_189==='YES').length+'</b> on 189 (MLTSSL)</span><span><b>'+DATA.filter(o=>o.visa_482_sid==='YES').length+'</b> on CSOL (482/186)</span><span><b>'+DATA.filter(o=>o.osl_national==='S').length+'</b> in national shortage</span>';
-document.querySelectorAll('.rowlink').forEach(function(a){a.addEventListener('click',function(){const r=document.getElementById('d'+a.getAttribute('data-i'));const open=r.hidden;r.hidden=!open;a.textContent=open?'details ▾':'details ▸';});});
+document.querySelectorAll('.rowlink').forEach(function(a){a.addEventListener('click',function(){const r=document.getElementById('d'+a.getAttribute('data-i'));const open=r.hidden;r.hidden=!open;if(open){a.classList.add('open');}else{a.classList.remove('open');}});});
 </script>
 </body>
 </html>
