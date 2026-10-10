@@ -7,7 +7,9 @@ flags with criteria. Snapshot **October 2026** — verify before advising.
 ## Use
 
 Open `index.html` in a browser (works from `file://`, no server, no network calls on load).
-Type an ANZSCO code or occupation name, e.g. `261311`.
+It is the hub of all 38 assessing-authority views. Pick an authority for its
+consolidated one-screen comparison, or open `occupation-viewer.html`, type an
+ANZSCO code or occupation name, e.g. `261311`, for the single-occupation view.
 
 `authorities-index.html` links the 38 per-assessing-authority consolidated views
 (e.g. `acs-view.html`, `tra-view.html`, `vetassess-view.html`).
@@ -16,7 +18,8 @@ Type an ANZSCO code or occupation name, e.g. `261311`.
 
 | File | Contents |
 |---|---|
-| `index.html` | Occupation viewer (623 occupations, self-contained) |
+| `index.html` | Landing page: hub of all authority views |
+| `occupation-viewer.html` | Single-occupation viewer (623 occupations, self-contained) |
 | `*-view.html` | Per-authority consolidated views + `authorities-index.html` hub |
 | `master.csv` | Full matrix, 623 rows × 68 cols |
 | `sources-used.csv` | Provenance: source + fetch date per column group |
