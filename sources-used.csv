@@ -1,0 +1,21 @@
+﻿column_group,source,fetch_date,notes
+code/title/desc/skill/assessing/hierarchy/tasks,mirror www.anzscosearch.com/<code>/index.html (623 occs),2026-10-10,111111 dir has no index.html; 19 occs genuinely have no assessing authority; 38 not in OSL
+osl_national + 8 states,per-occupation OSL tables in mirror,2026-10-10,2025 OSL; values NS/S/R/M or Not in OSL
+in_csol (456),mirror csol page inline table,2026-10-10,matches published CSOL size
+in_mltssl (212) + invite_tier,mirror mltssl page inline table,2026-10-10,matches published MLTSSL size; tiers 1-4 included
+in_stsol (215),mirror stsol page inline table,2026-10-10,matches published STSOL size
+in_rol (77),mirror rol page inline table,2026-10-10,matches published ROL size
+visa_* baseline flags,derived: 189/494 from MLTSSL(+ROL); 482-SID/186 from CSOL; 190/491 state-dependent,2026-10-10,Dec-2024 settings; verify before advising
+dama_flag/note,mirror dama-all paywalled; regional DAR lists not yet scraped,2026-10-10,pending
+st_* (24 cols),PENDING: 8 live state lists,,
+invites_12m/lowest_points/last_round,PENDING: Home Affairs invitation rounds,,
+csol-only new-catalogue codes (60),"CSOL table includes 60 codes outside v1.3 set (e.g. 261315, 111211); no occupation pages in mirror",2026-10-10,viewer covers 623 v1.3 occupations; CSOL flag set where overlapping (396)
+st_qld_*,"migration.qld.gov.au QSOL offshore (113) + onshore (201), fetched live",2026-10-10,190/491 flags + additional info + B&C pathway
+st_nt_*,"australiasnorthernterritory.com NT offshore list (139), fetched via TLS-impersonated session",2026-10-10,491 YES if listed; offshore intake closed 2026-27
+st_act_*,act.gov.au ACT Nominated Migration Program Occupation List Oct 2025 (280),2026-10-10,190 unless marked 491-only (28); Matrix criteria
+st_tas_*,RULE from migration.tas.gov.au: all 190/491-list occs eligible >=1 pathway,2026-10-10,flags mirror visa_190/491 baseline; pathways TSE/TSG/TER/TBO
+st_vic_*,"liveinmelbourne: 2025-26 closed, ROI-based no fixed list",2026-10-10,flags=closed
+st_sa_*,migration.sa.gov.au: GSM/ROI closed till 2026-27,2026-10-10,flags=closed
+st_nsw_*,nsw.gov.au NSW Skills Lists: 79 unit groups (190) + 78 (491),2026-10-10,mapped via occupation unit group; EOI rounds
+st_wa_*,"THIRD-PARTY mirror of WASMOL (383 rows, visasavenue.com)",2026-10-10,stream/min-points/status; VERIFY on migration.wa.gov.au (official search is JS-only)
+invites_12m/lowest_points/last_round,"Home Affairs SkillSelect rounds page is SharePoint JS-rendered (1304KB, 0 tables); not statically scrapable",2026-10-10,marked n/a; FUTURE: visaenvoy.com rounds pages per occupation/state

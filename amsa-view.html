@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AMSA-assessed occupations — consolidated view (internal)</title>
+<style>
+:root{--bg:#f4f5f7;--card:#fff;--ink:#1c2333;--mut:#5b6472;--line:#dfe3ea;--grn:#0f7a3d;--grnbg:#e6f6ec;--amb:#8a5a00;--ambbg:#fff4d6;--gry:#5b6472;--grybg:#eceff3;--red:#a31f1f;--redbg:#fdecec;--acc:#19176e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:13.5px/1.5 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.wrap{max-width:1400px;margin:0 auto;padding:20px 16px 60px}
+header.top{background:var(--acc);color:#fff;border-radius:12px;padding:18px 20px;margin-bottom:14px}
+header.top h1{margin:0 0 4px;font-size:21px}header.top p{margin:0;opacity:.85;font-size:13px}
+header.top a{color:#fff}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{border:1px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+thead th{background:#f0f2f6;position:sticky;top:0;font-size:12px}
+tr.detail td{background:#fafbfd;font-size:12.5px;color:#333}
+.code{font-weight:700;white-space:nowrap}.title{font-weight:600}
+.b{font-weight:700;white-space:nowrap}.y{color:var(--grn)}.n{color:#aab}.s{color:var(--amb)}.c{color:var(--red)}
+.oslS{color:var(--red);font-weight:700}.oslN{color:var(--grn)}
+.styes{color:var(--grn)}.stno{color:#c3c9d1}.stcl{color:var(--red);font-size:11.5px}
+a.rowlink{color:var(--acc);font-size:11.5px;cursor:pointer;white-space:nowrap}
+.foot{font-size:12px;color:var(--mut)}
+.sum{display:flex;gap:18px;flex-wrap:wrap;font-size:13px}
+.sum b{font-size:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><h1>AMSA-assessed occupations — consolidated view</h1><p>4 occupations &bull; 0 subclass-189 eligible &bull; 1 on CSOL (482-SID) &bull; snapshot Oct 2026 &bull; <a href="authorities-index.html">all authorities</a> &bull; verify before advising</p></header>
+<div class="card"><div class="sum" id="sum"></div></div>
+<div class="card" style="overflow-x:auto"><table id="t">
+<thead><tr><th>Code / Occupation</th><th>Skill</th><th>189</th><th>190</th><th>491</th><th>482</th><th>186</th><th>494</th><th>Tier</th><th>OSL<br>AUS</th><th>190 states</th><th>491 states</th><th></th></tr></thead>
+<tbody id="rows"></tbody>
+</table></div>
+<div class="card foot">Source: ANZSCO-Viewer master.csv (mirror 10 Oct 2026 + live state lists Oct 2026). “states” columns compress the 8-state matrix: green = nominating states. Click “details” per row for state criteria, lists, description. Full data stays in master.csv / index.html.</div>
+</div>
+<script>
+const DATA=[{"code": "231212", "title": "Ship's Engineer", "description": "Controls and manages the operation and maintenance of a ship&#039;s plant and equipment. Registration or licensing is required.", "skill_level": "2", "unit_group": "", "in_csol": "YES", "in_mltssl": "—", "in_stsol": "—", "in_rol": "—", "invite_tier": "", "visa_189": "—", "visa_190": "—", "visa_491": "—", "visa_482_sid": "YES", "visa_186": "YES", "visa_494": "—", "osl_national": "S", "osl_act": "S", "osl_nsw": "S", "osl_nt": "S", "osl_qld": "S", "osl_sa": "S", "osl_tas": "S", "osl_vic": "S", "osl_wa": "S", "st_act_190": "—", "st_act_491": "—", "st_act_criteria": "Not on ACT list Oct 2025", "st_nsw_190": "—", "st_nsw_491": "—", "st_nsw_criteria": "Unit group 2312 not on NSW Skills Lists", "st_nt_190": "—", "st_nt_491": "—", "st_nt_criteria": "Not on NT offshore list (family/job-offer streams use national 491 list)", "st_qld_190": "—", "st_qld_491": "—", "st_qld_criteria": "Not on QSOL 2025-26", "st_sa_190": "closed", "st_sa_491": "closed", "st_sa_criteria": "ROI/GSM closed; resumes 2026-27 program year", "st_tas_190": "—", "st_tas_491": "—", "st_tas_criteria": "Not on 190/491 lists", "st_vic_190": "closed", "st_vic_491": "closed", "st_vic_criteria": "2025-26 program closed (places filled); ROI-based, no fixed list; 2026-27 TBA", "st_wa_190": "—", "st_wa_491": "—", "st_wa_criteria": "Not on WASMOL/GOL (via third-party mirror; verify on migration.wa.gov.au)"}, {"code": "231213", "title": "Ship's Master", "description": "Controls and manages the operations of a ship or boat. Registration or licensing is required.", "skill_level": "2", "unit_group": "", "in_csol": "—", "in_mltssl": "—", "in_stsol": "—", "in_rol": "YES", "invite_tier": "", "visa_189": "—", "visa_190": "—", "visa_491": "state-dependent", "visa_482_sid": "—", "visa_186": "—", "visa_494": "YES", "osl_national": "S", "osl_act": "S", "osl_nsw": "S", "osl_nt": "S", "osl_qld": "S", "osl_sa": "S", "osl_tas": "S", "osl_vic": "S", "osl_wa": "S", "st_act_190": "—", "st_act_491": "—", "st_act_criteria": "Not on ACT list Oct 2025", "st_nsw_190": "—", "st_nsw_491": "YES", "st_nsw_criteria": "Unit group 2312 on NSW Skills List; EOI rounds; work/reside requirements", "st_nt_190": "limited", "st_nt_491": "YES", "st_nt_criteria": "Offshore list (491 stream); Must provide evidence of Australian licence/registration or a statement outlining eligibility to obtain registration of licence to work in Australia; offshore intake closed 2026-27, onshore-by-exception only", "st_qld_190": "—", "st_qld_491": "—", "st_qld_criteria": "Not on QSOL 2025-26", "st_sa_190": "closed", "st_sa_491": "closed", "st_sa_criteria": "ROI/GSM closed; resumes 2026-27 program year", "st_tas_190": "—", "st_tas_491": "YES", "st_tas_criteria": "Pathways TSE/TSG/TER/TBO; gold attributes (health/teaching/critical roles); all 190/491-list occs eligible for >=1 pathway", "st_vic_190": "closed", "st_vic_491": "closed", "st_vic_criteria": "2025-26 program closed (places filled); ROI-based, no fixed list; 2026-27 TBA", "st_wa_190": "—", "st_wa_491": "YES", "st_wa_criteria": "General - WASMOL Schedule 2; min 65pts; Available"}, {"code": "231214", "title": "Ship's Officer", "description": "Navigates and controls the safe operation of a ship and supervises and coordinates the activities of deck crew. Registration or licensing is required.", "skill_level": "2", "unit_group": "", "in_csol": "—", "in_mltssl": "—", "in_stsol": "—", "in_rol": "—", "invite_tier": "", "visa_189": "—", "visa_190": "—", "visa_491": "—", "visa_482_sid": "—", "visa_186": "—", "visa_494": "—", "osl_national": "S", "osl_act": "S", "osl_nsw": "S", "osl_nt": "S", "osl_qld": "S", "osl_sa": "S", "osl_tas": "S", "osl_vic": "S", "osl_wa": "S", "st_act_190": "—", "st_act_491": "—", "st_act_criteria": "Not on ACT list Oct 2025", "st_nsw_190": "—", "st_nsw_491": "—", "st_nsw_criteria": "Unit group 2312 not on NSW Skills Lists", "st_nt_190": "—", "st_nt_491": "—", "st_nt_criteria": "Not on NT offshore list (family/job-offer streams use national 491 list)", "st_qld_190": "—", "st_qld_491": "—", "st_qld_criteria": "Not on QSOL 2025-26", "st_sa_190": "closed", "st_sa_491": "closed", "st_sa_criteria": "ROI/GSM closed; resumes 2026-27 program year", "st_tas_190": "—", "st_tas_491": "—", "st_tas_criteria": "Not on 190/491 lists", "st_vic_190": "closed", "st_vic_491": "closed", "st_vic_criteria": "2025-26 program closed (places filled); ROI-based, no fixed list; 2026-27 TBA", "st_wa_190": "—", "st_wa_491": "—", "st_wa_criteria": "Not on WASMOL/GOL (via third-party mirror; verify on migration.wa.gov.au)"}, {"code": "231215", "title": "Marine Surveyor", "description": "Surveys machines and hulls of ships to ensure they are constructed, equipped and maintained according to safety standards, rules and regulations laid down by marine authorities. Registration or licensing is required.", "skill_level": "2", "unit_group": "", "in_csol": "—", "in_mltssl": "—", "in_stsol": "—", "in_rol": "—", "invite_tier": "", "visa_189": "—", "visa_190": "—", "visa_491": "—", "visa_482_sid": "—", "visa_186": "—", "visa_494": "—", "osl_national": "NS", "osl_act": "NS", "osl_nsw": "NS", "osl_nt": "NS", "osl_qld": "NS", "osl_sa": "NS", "osl_tas": "NS", "osl_vic": "NS", "osl_wa": "NS", "st_act_190": "—", "st_act_491": "—", "st_act_criteria": "Not on ACT list Oct 2025", "st_nsw_190": "—", "st_nsw_491": "—", "st_nsw_criteria": "Unit group 2312 not on NSW Skills Lists", "st_nt_190": "—", "st_nt_491": "—", "st_nt_criteria": "Not on NT offshore list (family/job-offer streams use national 491 list)", "st_qld_190": "—", "st_qld_491": "—", "st_qld_criteria": "Not on QSOL 2025-26", "st_sa_190": "closed", "st_sa_491": "closed", "st_sa_criteria": "ROI/GSM closed; resumes 2026-27 program year", "st_tas_190": "—", "st_tas_491": "—", "st_tas_criteria": "Not on 190/491 lists", "st_vic_190": "closed", "st_vic_491": "closed", "st_vic_criteria": "2025-26 program closed (places filled); ROI-based, no fixed list; 2026-27 TBA", "st_wa_190": "—", "st_wa_491": "—", "st_wa_criteria": "Not on WASMOL/GOL (via third-party mirror; verify on migration.wa.gov.au)"}];
+const ST=[['ACT','st_act'],['NSW','st_nsw'],['NT','st_nt'],['QLD','st_qld'],['SA','st_sa'],['TAS','st_tas'],['VIC','st_vic'],['WA','st_wa']];
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function vb(v){if(v==='YES')return '<span class="b y">YES</span>';if(v==='state-dependent')return '<span class="b s">dep</span>';if(v==='closed')return '<span class="b c">clsd</span>';if(v==='limited')return '<span class="b s">ltd</span>';return '<span class="b n">—</span>';}
+function statesFor(o,sfx){const out=[];ST.forEach(function(s){const v=o[s[1]+sfx];if(v==='YES')out.push('<span class="styes">'+s[0]+'</span>');else if(v==='closed')out.push('<span class="stcl">'+s[0]+'✕</span>');});return out.join(' ')||'<span class="stno">—</span>';}
+let h='';
+DATA.forEach(function(o,i){
+  h+='<tr><td><span class="code">'+esc(o.code)+'</span><br><span class="title">'+esc(o.title)+'</span></td><td>'+esc(o.skill_level)+'</td><td>'+vb(o.visa_189)+'</td><td>'+vb(o.visa_190)+'</td><td>'+vb(o.visa_491)+'</td><td>'+vb(o.visa_482_sid)+'</td><td>'+vb(o.visa_186)+'</td><td>'+vb(o.visa_494)+'</td><td>'+esc(o.invite_tier||'—')+'</td><td class="'+(o.osl_national==='S'||o.osl_national==='R'||o.osl_national==='M'?'oslS':'oslN')+'">'+esc(o.osl_national)+'</td><td>'+statesFor(o,'_190')+'</td><td>'+statesFor(o,'_491')+'</td><td><a class="rowlink" data-i="'+i+'">details ▸</a></td></tr>';
+  h+='<tr class="detail" id="d'+i+'" hidden><td colspan="13"><b>'+esc(o.code)+' '+esc(o.title)+'</b> — '+esc(o.description)+'<br><b>Lists:</b> CSOL '+esc(o.in_csol)+' · MLTSSL '+esc(o.in_mltssl)+' · STSOL '+esc(o.in_stsol)+' · ROL '+esc(o.in_rol)+' · '+esc(o.unit_group);
+  ST.forEach(function(s){const c=o[s[1]+'_criteria'];if(c)h+='<br><b>'+s[0]+':</b> 190='+esc(o[s[1]+'_190'])+' 491='+esc(o[s[1]+'_491'])+' — '+esc(c);});
+  h+='</td></tr>';
+});
+document.getElementById('rows').innerHTML=h;
+document.getElementById('sum').innerHTML='<span><b>'+DATA.length+'</b> occupations</span><span><b>'+DATA.filter(o=>o.visa_189==='YES').length+'</b> on 189 (MLTSSL)</span><span><b>'+DATA.filter(o=>o.visa_482_sid==='YES').length+'</b> on CSOL (482/186)</span><span><b>'+DATA.filter(o=>o.osl_national==='S').length+'</b> in national shortage</span>';
+document.querySelectorAll('.rowlink').forEach(function(a){a.addEventListener('click',function(){const r=document.getElementById('d'+a.getAttribute('data-i'));const open=r.hidden;r.hidden=!open;a.textContent=open?'details ▾':'details ▸';});});
+</script>
+</body>
+</html>
