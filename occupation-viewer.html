@@ -34,6 +34,15 @@ details{margin-top:8px}summary{cursor:pointer;font-weight:600;color:var(--acc)}
 ul.tasks{margin:6px 0;padding-left:20px}ul.tasks li{margin:3px 0}
 .foot{font-size:12.5px;color:var(--mut)}
 .osl{display:flex;flex-wrap:wrap;gap:6px}
+.scrollx{overflow-x:auto}
+@media (max-width:640px){
+.wrap{padding:12px 10px 40px}
+header.top{padding:14px}header.top h1{font-size:18px}header.top p{font-size:12px}
+.card{padding:12px}.card h2{font-size:20px}
+table.st{font-size:12.5px;min-width:620px}
+table.st th,table.st td{padding:6px 7px}
+.picker input{font-size:16px}
+}
 </style>
 </head>
 <body>
@@ -72,9 +81,9 @@ function render(code){
     +'<span class="pill n">Invite tier <small>'+esc(o.invite_tier||'—')+'</small></span></div></div>';
   h+='<div class="card"><h3 class="sec">2025 Occupation Shortage List</h3><div class="osl">'
     +oslPill('AUS',o.osl_national)+oslPill('ACT',o.osl_act)+oslPill('NSW',o.osl_nsw)+oslPill('NT',o.osl_nt)+oslPill('QLD',o.osl_qld)+oslPill('SA',o.osl_sa)+oslPill('TAS',o.osl_tas)+oslPill('VIC',o.osl_vic)+oslPill('WA',o.osl_wa)+'</div></div>';
-  h+='<div class="card"><h3 class="sec">State / territory nomination</h3><table class="st"><tr><th>State</th><th>190</th><th>491</th><th>Criteria / status</th></tr>';
+  h+='<div class="card"><h3 class="sec">State / territory nomination</h3><div class="scrollx"><table class="st"><tr><th>State</th><th>190</th><th>491</th><th>Criteria / status</th></tr>';
   STATES.forEach(function(s){h+='<tr><td><b>'+s[0]+'</b></td><td>'+flag(o[s[1]+'_190'])+'</td><td>'+flag(o[s[1]+'_491'])+'</td><td>'+esc(o[s[1]+'_criteria'])+'</td></tr>';});
-  h+='</table></div>';
+  h+='</table></div></div>';
   h+='<div class="card"><h3 class="sec">DAMA &amp; activity</h3><p class="meta">DAMA: '+esc(o.dama_flag)+' — '+esc(o.dama_note)+'<br>Invitations: '+esc(o.invites_12m)+' &nbsp;•&nbsp; Lowest points: '+esc(o.lowest_points_invited)+'<br><span style="font-size:12px">'+esc(o.last_invite_round)+'</span><br>Salary: '+esc(o.salary_note)+'</p></div>';
   if(o.unit_group_desc)h+='<div class="card"><h3 class="sec">Unit group</h3><p class="meta">'+esc(o.unit_group_desc)+'</p>'+(tasks.length?'<details><summary>Tasks ('+tasks.length+')</summary><ul class="tasks">'+tasks.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul></details>':'')+(grp.length?'<details><summary>Occupations in this unit group ('+grp.length+')</summary><p class="meta">'+grp.map(esc).join('<br>')+'</p></details>':'')+'</div>';
   h+='<div class="card foot">Page updated: '+esc(o.modified)+' &nbsp;•&nbsp; '+esc(o.data_status)+'</div>';

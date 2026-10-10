@@ -24,11 +24,19 @@ a.rowlink{color:var(--acc);font-size:11.5px;cursor:pointer;white-space:nowrap}
 .foot{font-size:12px;color:var(--mut)}
 .sum{display:flex;gap:18px;flex-wrap:wrap;font-size:13px}
 .sum b{font-size:16px}
+@media (max-width:640px){
+.wrap{padding:12px 10px 40px}
+header.top{padding:14px}header.top h1{font-size:18px}header.top p{font-size:12px}
+.card{padding:12px}
+table{font-size:12px}#t{min-width:840px}
+th,td{padding:5px 6px}
+.sum{gap:12px}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
-<header class="top"><h1>OTC-assessed occupations — consolidated view</h1><p>1 occupations &bull; 1 subclass-189 eligible &bull; 1 on CSOL (482-SID) &bull; snapshot Oct 2026 &bull; <a href="index.html">all authorities</a> &bull; verify before advising</p></header>
+<header class="top"><h1>OTC-assessed occupations — consolidated view</h1><p>1 occupations &bull; 1 subclass-189 eligible &bull; 1 on CSOL (482-SID) &bull; snapshot Oct 2026 &bull; <a href="authorities-index.html">all authorities</a> &bull; verify before advising</p></header>
 <div class="card"><div class="sum" id="sum"></div></div>
 <div class="card" style="overflow-x:auto"><table id="t">
 <thead><tr><th>Code / Occupation</th><th>Skill</th><th>189</th><th>190</th><th>491</th><th>482</th><th>186</th><th>494</th><th>Tier</th><th>OSL<br>AUS</th><th>190 states</th><th>491 states</th><th></th></tr></thead>
