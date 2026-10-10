@@ -19,3 +19,4 @@ st_sa_*,migration.sa.gov.au: GSM/ROI closed till 2026-27,2026-10-10,flags=closed
 st_nsw_*,nsw.gov.au NSW Skills Lists: 79 unit groups (190) + 78 (491),2026-10-10,mapped via occupation unit group; EOI rounds
 st_wa_*,"THIRD-PARTY mirror of WASMOL (383 rows, visasavenue.com)",2026-10-10,stream/min-points/status; VERIFY on migration.wa.gov.au (official search is JS-only)
 invites_12m/lowest_points/last_round,"Home Affairs SkillSelect rounds page is SharePoint JS-rendered (1304KB, 0 tables); not statically scrapable",2026-10-10,marked n/a; FUTURE: visaenvoy.com rounds pages per occupation/state
+acs-assessment.html,"acs.org.au: msa.html, assessment-pathway(.html, general-skills, post-australian-study, rpl, qualification-only), occupations-anzsco-codes/{information-technology, data-science, cyber-security-occupations}.html, msa/infohub.html",2026-10-10,"fees April-2025 editions; deduction tables, docs, appeals, coverage flags (25 in-viewer + 11 ACS-only new codes)"

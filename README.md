@@ -21,6 +21,7 @@ ANZSCO code or occupation name, e.g. `261311`, for the single-occupation view.
 | `index.html` | Landing page: hub of all authority views |
 | `occupation-viewer.html` | Single-occupation viewer (623 occupations, self-contained) |
 | `*-view.html` | Per-authority consolidated views + `authorities-index.html` hub |
+| `acs-assessment.html` | ACS pathways flowchart + criteria (linked from ACS view) |
 | `master.csv` | Full matrix, 623 rows × 68 cols |
 | `sources-used.csv` | Provenance: source + fetch date per column group |
 
