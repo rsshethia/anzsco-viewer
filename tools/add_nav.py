@@ -59,7 +59,7 @@ def process(path: Path) -> str:
     if "</header>" in raw:
         raw = raw.replace("</header>", "</header>\n" + nav, 1)
     else:
-        m = re.search(r"<h1>.*?</h1>\s*<p>.*?</p>", raw, re.DOTALL)
+        m = re.search(r"<h1>.*?</h1>(?:\s*<p[^>]*>.*?</p>)+", raw, re.DOTALL)
         assert m, f"no hub intro found in {page}"
         raw = raw[: m.end()] + "\n" + nav + raw[m.end():]
     assert "</style>" in raw, f"no style block in {page}"
