@@ -31,8 +31,9 @@ details[open] summary::before{transform:rotate(45deg)}
 .flow svg{min-width:640px;width:100%;height:auto}
 .foot{font-size:12.5px;color:var(--mut);max-width:76ch}
 ul.tight{margin:8px 0;padding-left:22px;max-width:74ch}ul.tight li{margin:4px 0}
-@media (max-width:640px){.wrap{padding:14px 10px 44px}header.top{padding:18px}header.top h1{font-size:20px}.card{padding:14px}table{font-size:12px}th,td{padding:6px 7px}}
-.sitenav{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;border-top:2px solid #e7e2d6;border-bottom:1px solid #f1eee4;padding:9px 2px;margin:0 0 16px;font-size:13.5px}.sitenav a{color:#23206e;font-weight:650;text-underline-offset:3px}.sitenav a:hover{text-decoration-thickness:2px}.sitenav .here{color:#1d2030;font-weight:750}.sitenav .sep{color:#9aa1ad}@media (max-width:640px){.sitenav{font-size:13px;padding:8px 2px}}</style>
+@media (max-width:640px){.wrap{padding:14px 10px 44px}header.top{padding:18px}header.top h1{font-size:20px}.card{padding:14px}table{font-size:12px}th,td{padding:6px 7px}.cov{grid-template-columns:1fr}}
+.cov{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sitenav{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;border-top:2px solid #e7e2d6;border-bottom:1px solid #f1eee4;padding:9px 2px;margin:0 0 16px;font-size:13.5px}.sitenav a{color:#23206e;font-weight:650;text-underline-offset:3px;padding:4px 0}.sitenav a:hover{text-decoration-thickness:2px}.sitenav .here{color:#1d2030;font-weight:750}.sitenav .sep{color:#9aa1ad}@media (max-width:640px){.sitenav{font-size:13px;padding:8px 2px}}</style>
 </head>
 <body>
 <div class="wrap">
@@ -43,7 +44,7 @@ ul.tight{margin:8px 0;padding-left:22px;max-width:74ch}ul.tight li{margin:4px 0}
 
 
 
-<div class="card"><h2 class="sec">Decision flow — which pathway?</h3>
+<div class="card"><h2 class="sec">Decision flow — which pathway?</h2>
 <div class="flow">
 <svg viewBox="0 0 680 560" role="img" aria-label="ACS pathway decision flowchart">
 <style>.b{fill:#fff;stroke:#19176e;stroke-width:2}.d{fill:#eef0ff;stroke:#19176e;stroke-width:2}.t{font:13px sans-serif;fill:#1c2333}.s{font:12px sans-serif;fill:#5b6472}.a{stroke:#19176e;stroke-width:2;fill:none;marker-end:url(#ah)}.p{fill:#0f7a3d;font:12px sans-serif;font-weight:bold}.n{fill:#a31f1f;font:12px sans-serif;font-weight:bold}</style>
@@ -73,7 +74,7 @@ ul.tight{margin:8px 0;padding-left:22px;max-width:74ch}ul.tight li{margin:4px 0}
 </svg>
 </div></div>
 
-<div class="card"><h2 class="sec">General Skills — experience deduction (the core table)</h3>
+<div class="card"><h2 class="sec">General Skills — experience deduction (the core table)</h2>
 <table><tr><th>Qualification (AQF-comparable)</th><th>ICT content</th><th>Related to occupation?</th><th>Experience required ★</th></tr>
 <tr><td>Bachelor+ </td><td>Major</td><td>Closely</td><td><b>2yrs in last 10</b> OR 4yrs anytime (earliest skill date wins)</td></tr>
 <tr><td>Bachelor+</td><td>Major</td><td>Not closely</td><td>4yrs anytime</td></tr>
@@ -84,6 +85,7 @@ ul.tight{margin:8px 0;padding-left:22px;max-width:74ch}ul.tight li{margin:4px 0}
 </table>
 <p style="font-size:12.5px;color:#5b6472">Data Science variant: ICT/CS/Maths/Stats/Engineering majors/minors assessed on parallel rungs (DS-major ≈ ICT-major terms). ★ deducted experience sets the Skill-Requirement-Met Date (only post-date experience counts for points). 10-yr window = 10yrs before submission date. Seoul Accord / ACS-accredited degrees count as ICT Major (assessor discretion; onus of proof on applicant).</p></div>
 
+<div class="card">
 <details><summary>Post Australian Study — criteria &amp; docs ($1,136)</summary>
 <ul class="tight"><li>Australian bachelor+ with IT/Data Science <b>major closely related</b> to nominated occupation <b>plus</b> 1yr (365 days) relevant work (anywhere, post-degree) <b>OR</b> completed ACS Professional Year.</li><li>Docs: 2× photo ID, qualification evidence, work evidence <i>or</i> Professional Year completion.</li><li>Note: ACS does not assess the 485 Australian Study Requirement — Home Affairs does.</li></ul></details>
 
@@ -95,9 +97,10 @@ ul.tight{margin:8px 0;padding-left:22px;max-width:74ch}ul.tight li{margin:4px 0}
 
 <details><summary>Assessment mechanics &amp; rules</summary>
 <ul class="tight"><li><b>Order:</b> ID → AQF comparability → ICT Major/Minor/Insufficient → closely-related test → experience deduction → outcome letter per ANZSCO (up to 3 codes, one price).</li><li><b>Counting:</b> ≥20h/wk = full-time; &lt;20h unsuitable; study-required experience excluded; overlapping episodes counted once (both listed suitable).</li><li><b>Evidence:</b> employer refs on letterhead (or colleague stat dec + service/leaving certificate); payment evidence must match skill level; nothing can be added after submission.</li><li><b>Vendor certs:</b> mandatory for RPL; optional for DevOps/Cyber codes; banned for 485 stream.</li><li><b>Appeals:</b> Level 1 (internal, senior assessor, extra evidence allowed) within <b>60 days</b> via portal; Level 2 (external) within <b>30 days</b> via email, no new evidence; 2–4 wks each; fee refund only if wrongly assessed.</li><li><b>Service:</b> 4–6 weeks standard (15 days advertised on new portal); free priority if visa deadline &lt;12 weeks (2 wks notice); Christmas shutdown 21 Dec 2026–4 Jan 2027; no English test; 18+ only; completed qualifications only; no pre-assessment advice; complimentary 12-month ACS membership.</li></ul></details>
+</div>
 
-<div class="card"><h2 class="sec">Occupation coverage — ACS lists vs this viewer</h3>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div class="card"><h2 class="sec">Occupation coverage — ACS lists vs this viewer</h2>
+<div class="cov">
 <div><b>In this viewer (25, v1.3)</b><table><tr><th>Code</th><th>Status</th></tr>
 <tr><td><b>135111</b></td><td><span class="pill y">in viewer</span></td></tr>
 <tr><td><b>135112</b></td><td><span class="pill y">in viewer</span></td></tr>

@@ -51,7 +51,7 @@ table.st{font-size:12.5px;min-width:620px}
 table.st th,table.st td{padding:7px 8px}
 .picker input{font-size:16px}
 }
-.sitenav{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;border-top:2px solid #e7e2d6;border-bottom:1px solid #f1eee4;padding:9px 2px;margin:0 0 16px;font-size:13.5px}.sitenav a{color:#23206e;font-weight:650;text-underline-offset:3px}.sitenav a:hover{text-decoration-thickness:2px}.sitenav .here{color:#1d2030;font-weight:750}.sitenav .sep{color:#9aa1ad}@media (max-width:640px){.sitenav{font-size:13px;padding:8px 2px}}</style>
+.sitenav{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;border-top:2px solid #e7e2d6;border-bottom:1px solid #f1eee4;padding:9px 2px;margin:0 0 16px;font-size:13.5px}.sitenav a{color:#23206e;font-weight:650;text-underline-offset:3px;padding:4px 0}.sitenav a:hover{text-decoration-thickness:2px}.sitenav .here{color:#1d2030;font-weight:750}.sitenav .sep{color:#9aa1ad}@media (max-width:640px){.sitenav{font-size:13px;padding:8px 2px}}</style>
 </head>
 <body>
 <div class='wrap'>
@@ -75,10 +75,10 @@ function render(code){
   let h='<div class="card"><span class="code">'+esc(o.code)+'</span><h2>'+esc(o.title)+'</h2>';
   h+='<p class="desc">'+esc(o.description||'No ANZSCO v1.3 description — NZ-only code.')+'</p>';
   h+='<p class="meta">ANZSCO skill <b>'+esc(o.skill_anzsco||'—')+'</b> &nbsp;•&nbsp; '+esc(o.nz_group)+'</p></div>';
-  h+='<div class="card"><h2 class="sec">NZ pathways</h3><div class="badges">'
+  h+='<div class="card"><h2 class="sec">NZ pathways</h2><div class="badges">'
     +pill('Green',o.green_tier||'not listed',!!o.green_tier)
     +pill('NOL-AEWV',o.nol_skill?('skill '+o.nol_skill):'—',!!o.nol_skill)+'</div></div>';
-  h+='<div class="card"><h2 class="sec">Requirements</h3><p class="meta"><b>INZ requirements:</b> '+esc(o.requirements||'—')+'<br><b>Registration:</b> '+esc(o.registration||'—')+(o.nol_effective?'<br>NOL recognised from '+esc(o.nol_effective)+' (AEWV job check only).':'')+'</p></div>';
+  h+='<div class="card"><h2 class="sec">Requirements</h2><p class="meta"><b>INZ requirements:</b> '+esc(o.requirements||'—')+'<br><b>Registration:</b> '+esc(o.registration||'—')+(o.nol_effective?'<br>NOL recognised from '+esc(o.nol_effective)+' (AEWV job check only).':'')+'</p></div>';
   document.getElementById('view').innerHTML=h;
 }
 document.getElementById('q').addEventListener('change',function(e){

@@ -23,7 +23,7 @@ CSS = (
     ".sitenav{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;"
     "border-top:2px solid #e7e2d6;border-bottom:1px solid #f1eee4;"
     "padding:9px 2px;margin:0 0 16px;font-size:13.5px}"
-    ".sitenav a{color:#23206e;font-weight:650;text-underline-offset:3px}"
+    ".sitenav a{color:#23206e;font-weight:650;text-underline-offset:3px;padding:4px 0}"
     ".sitenav a:hover{text-decoration-thickness:2px}"
     ".sitenav .here{color:#1d2030;font-weight:750}"
     ".sitenav .sep{color:#9aa1ad}"
@@ -46,6 +46,19 @@ def nav_for(page: str, q: str) -> str:
 
 NAV_RE = re.compile(r"\n<nav[^>]*sitenav[^>]*>.*?</nav>", re.DOTALL)
 
+# CSS emitted by earlier add_nav passes; stripped before inserting CSS so
+# re-runs converge after the constant changes.
+OLD_CSS = [
+    ".sitenav{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;"
+    "border-top:2px solid #e7e2d6;border-bottom:1px solid #f1eee4;"
+    "padding:9px 2px;margin:0 0 16px;font-size:13.5px}"
+    ".sitenav a{color:#23206e;font-weight:650;text-underline-offset:3px}"
+    ".sitenav a:hover{text-decoration-thickness:2px}"
+    ".sitenav .here{color:#1d2030;font-weight:750}"
+    ".sitenav .sep{color:#9aa1ad}"
+    "@media (max-width:640px){.sitenav{font-size:13px;padding:8px 2px}}"
+]
+
 
 def process(path: Path) -> str:
     raw = path.read_text(encoding="utf-8")
@@ -53,6 +66,8 @@ def process(path: Path) -> str:
     # so re-runs converge to byte-identical output
     raw = NAV_RE.sub("", raw)
     raw = raw.replace(CSS, "")
+    for old in OLD_CSS:
+        raw = raw.replace(old, "")
     q = '"' if 'href="index.html"' in raw or 'href="occupation-viewer.html"' in raw else "'"
     page = path.name
     nav = nav_for(page, q)
