@@ -258,8 +258,36 @@ NZ_NOTE = ("NZ section &bull; snapshot Oct 2026 &bull; Green List eff. 9 Mar 202
 
 
 def hub_nav():
-    return ("<a href='index.html'>AU hub</a> &bull; <a href='nz-occupation-viewer.html'>NZ occupation viewer</a> "
-            "&bull; <a href='master-nz.csv'>master-nz.csv</a> &bull; <a href='sources-nz.csv'>sources</a>")
+    return ("<a href='master-nz.csv'>master-nz.csv</a> &bull; <a href='sources-nz.csv'>sources</a>")
+
+
+NAV_CSS = (
+    ".sitenav{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;"
+    "border-top:2px solid #e7e2d6;border-bottom:1px solid #f1eee4;"
+    "padding:9px 2px;margin:0 0 16px;font-size:13.5px}"
+    ".sitenav a{color:#23206e;font-weight:650;text-underline-offset:3px}"
+    ".sitenav a:hover{text-decoration-thickness:2px}"
+    ".sitenav .here{color:#1d2030;font-weight:750}"
+    ".sitenav .sep{color:#9aa1ad}"
+    "@media (max-width:640px){.sitenav{font-size:13px;padding:8px 2px}}"
+)
+
+NAV_ITEMS = [
+    ("AU hub", "index.html"),
+    ("AU viewer", "occupation-viewer.html"),
+    ("NZ index", "nz-index.html"),
+    ("NZ viewer", "nz-occupation-viewer.html"),
+]
+
+
+def sitenav(page):
+    parts = []
+    for label, href in NAV_ITEMS:
+        if href == page:
+            parts.append("<span class='here' aria-current='page'>" + label + "</span>")
+        else:
+            parts.append("<a href='" + href + "'>" + label + "</a>")
+    return "<nav class='sitenav' aria-label='Site'>" + "<span class='sep'>\u2022</span>".join(parts) + "</nav>"
 
 
 def build_pages(rows, t1, t2, nol):
@@ -267,7 +295,7 @@ def build_pages(rows, t1, t2, nol):
     nol_only = [r for r in rows if not r["green_tier"]]
 
     # ---- nz-index.html (hub, same narrow style as AU index) ----
-    st = style_from("index.html")
+    st = style_from("index.html") + NAV_CSS
     groups = {}
     for r in green:
         groups.setdefault((r["green_tier"], r["nz_group"]), []).append(r)
@@ -281,6 +309,7 @@ def build_pages(rows, t1, t2, nol):
         f"<style>{st}</style></head><body><div class='wrap'>\n"
         "<h1>New Zealand occupations</h1>\n"
         f"<p>Internal reference &bull; {NZ_NOTE} &bull; {hub_nav()}</p>\n"
+        f"{sitenav('nz-index.html')}\n"
         "<div class='card'><table><tr><th>Pathway</th><th>What it gives</th><th>Occupations</th><th>View</th></tr>\n"
         f"<tr><td>Green List Tier 1</td><td>Straight to Residence (apply with job offer)</td><td>{len(t1)}</td>"
         "<td><a href='nz-green-t1-view.html'>open</a></td></tr>\n"
@@ -301,7 +330,7 @@ def build_pages(rows, t1, t2, nol):
         "</div></body></html>", encoding="utf-8")
 
     # ---- consolidated pathway views (same wide-table style as AU authority views) ----
-    wst = style_from("acs-view.html")
+    wst = style_from("acs-view.html") + NAV_CSS
     for fname, title, recs, blurb in [
         ("nz-green-t1-view.html", "NZ Green List Tier 1 — Straight to Residence", [r for r in rows if r["green_tier"] == "Tier 1"], "146 occupations"),
         ("nz-green-t2-view.html", "NZ Green List Tier 2 — Work to Residence", [r for r in rows if r["green_tier"] == "Tier 2"], "37 occupations"),
@@ -314,7 +343,8 @@ def build_pages(rows, t1, t2, nol):
             f"<title>{esc(title)} (internal)</title>\n<style>{wst}</style>\n</head>\n<body>\n"
             "<div class='wrap'>\n"
             f"<header class='top'><h1>{esc(title)}</h1><p>{esc(blurb)} &bull; {NZ_NOTE} &bull; "
-            f"<a href='nz-index.html'>NZ index</a> &bull; <a href='index.html'>AU hub</a> &bull; verify before advising</p></header>\n"
+            f"<a href='nz-index.html'>NZ index</a> &bull; <a href='index.html'>AU hub</a></p></header>\n"
+            f"{sitenav(fname)}\n"
             "<div class='card'><div class='sum' id='sum'></div></div>\n"
             "<div class='card' style='overflow-x:auto'><table id='t'>\n"
             "<thead><tr><th>Code / Occupation</th><th>Skill</th><th>Group</th><th>Tier</th><th>NOL</th><th></th></tr></thead>\n"
@@ -333,7 +363,7 @@ def build_pages(rows, t1, t2, nol):
             "</script>\n</body>\n</html>", encoding="utf-8")
 
     # ---- nz-occupation-viewer.html (single-occupation search, same style as AU viewer) ----
-    vst = style_from("occupation-viewer.html")
+    vst = style_from("occupation-viewer.html") + NAV_CSS
     vdata = json.dumps(rows, ensure_ascii=False).replace("</", "<\\/")
     (ROOT / "nz-occupation-viewer.html").write_text(
         "<!DOCTYPE html>\n<html lang='en'>\n<head>\n<meta charset='utf-8'>\n"
@@ -341,6 +371,7 @@ def build_pages(rows, t1, t2, nol):
         "<title>NZ Occupation Viewer (internal)</title>\n<style>" + vst + "</style>\n</head>\n<body>\n"
         "<div class='wrap'>\n"
         f"<header class='top'><h1>NZ Occupation Viewer</h1><p>Internal reference &bull; {NZ_NOTE}</p></header>\n"
+        f"{sitenav('nz-occupation-viewer.html')}\n"
         "<div class='picker'><label for='q'>Occupation (type code or name)</label>\n"
         "<input id='q' list='occs' placeholder='e.g. 233211 or Civil Engineer' autocomplete='off'>\n"
         "<datalist id='occs'></datalist></div>\n"

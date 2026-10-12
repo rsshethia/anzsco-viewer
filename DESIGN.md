@@ -26,5 +26,9 @@ the Python builder templates (`build_all_auth.py`, `build_viewer.py`,
   16px inputs (no iOS zoom)
 * Depth: one soft header shadow + 1px card hairline shadow; no offset blocks,
   no gradients, no glass, no icon-card grids
+* Site nav: one shared `nav.sitenav` hairline bar (2px top / 1px bottom rule,
+  13.5px semibold indigo links, middot separators) directly below `header.top`
+  on every page; current page is plain text with `aria-current="page"`.
+  Injected by `tools/add_nav.py`; NZ rebuilds emit it natively.
 * Detector status (Oct 2026): zero errors/warnings; one advisory (em-dashes in
   ACS source-faithful criteria text, kept verbatim deliberately)
