@@ -1,2 +1,5 @@
 # Build intermediates & raw snapshots (regenerable, third-party HTML)
 work/
+work-nz/*.html
+work-nz/*.json
+!work-nz/build_nz.py

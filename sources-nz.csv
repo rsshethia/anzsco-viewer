@@ -1,0 +1,6 @@
+dataset,source,effective,notes
+green_tier1/2 + requirements + registration,immigration.govt.nz/opsmanual/89117.htm (Appendix 13),09/03/2026,146 Tier-1 + 37 Tier-2 occupations by ANZSCO code
+nol_aewv Tables 1-6,immigration.govt.nz .../national-occupation-list-occupations-used-for-an-aewv/,2025-11-03 + 2026-03-09,134 NOL skill 1-3 occupations recognised for AEWV job check only
+median_wage,INZ ops manual SR5.15.1,2026-03-09,"$35.00/hr (from 9 Mar 2026, SR5.15.1)"
+descriptions/ANZSCO skill,ANZSCO-Viewer work/occupations.json (ANZSCO v1.3 mirror),Oct 2026,blank where Green/NOL code has no v1.3 equivalent
+smc_points_summary,immigration.govt.nz SMC pathway pages (SR3.10-SR3.35),Oct 2026,static guidance in pages; 6 points via qual/income/registration + NZ work exp
